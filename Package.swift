@@ -20,12 +20,18 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(name: "FirebaseRemoteConfigJSON", path: "firebase-remote-config-json")
+        .package(
+            name: "AppConfig",
+            url: "https://github.com/andrewSeregin/app-config.git",
+            branch: "develop"
+        )
+        .package(name: "FirebaseRemoteConfigJSON", path: "./firebase-remote-config-json")
     ],
     targets: [
         .target(
             name: "AppConfigFirebase",
             dependencies: [
+                "AppConfig",
                 "FirebaseRemoteConfigJSON"
             ]
         ),
