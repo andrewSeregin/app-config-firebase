@@ -19,10 +19,16 @@ let package = Package(
             ]
         ),
     ],
+    dependencies: [
+        .package(name: "FirebaseRemoteConfigJSON", path: "firebase-remote-config-json")
+    ],
     targets: [
         .target(
             name: "AppConfigFirebase",
-            dependencies: []),
+            dependencies: [
+                "FirebaseRemoteConfigJSON"
+            ]
+        ),
         .testTarget(
             name: "AppConfigFirebaseTests",
             dependencies: [
